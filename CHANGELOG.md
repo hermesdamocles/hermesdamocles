@@ -1,14 +1,14 @@
 # Changelog
 
-All notable changes to Hermes Labyrinth are documented here.
+All notable changes to Hermes Damocles are documented here.
 
 ## v0.1.3 - 2026-05-04
 
 ### Changed
 
 - Skill inventory now resolves the Hermes source root from the installed
-  `hermes_cli` package instead of the Labyrinth plugin path, fixing source
-  attribution when installed under `~/.hermes/plugins/hermes-labyrinth`.
+  `hermes_cli` package instead of the Damocles plugin path, fixing source
+  attribution when installed under `~/.hermes/plugins/hermes-damocles`.
 - `/skills` now separates effective skills, expected shadowed overrides, true
   duplicates, and scan errors.
 - User-over-bundled skill overrides are reported as `shadowed` instead of
@@ -23,7 +23,7 @@ All notable changes to Hermes Labyrinth are documented here.
 
 ### Changed
 
-- Labyrinth now turns HTML/SPA fallback API responses into an actionable
+- Damocles now turns HTML/SPA fallback API responses into an actionable
   backend-not-mounted diagnostic instead of surfacing raw JSON parser errors.
 - Install docs now clarify that dashboard rescans refresh frontend discovery,
   while Python plugin API routes require a full dashboard restart.
@@ -56,7 +56,7 @@ First public hackathon release.
 
 - Read-only Hermes dashboard plugin manifest and API.
 - Journey index for CLI, dashboard, gateway, cron, and delegated sessions.
-- Labyrinth map with thread, corridor, and flight-strip modes.
+- Damocles map with thread, corridor, and flight-strip modes.
 - Crossing inspector with previews, status, evidence, and guideposts.
 - Skill atlas, cron gate, model ferry, memory/context view, and report view.
 - Static GitHub Pages demo with mocked Hermes state.

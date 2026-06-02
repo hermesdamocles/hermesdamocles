@@ -1,6 +1,6 @@
 # Known Limitations
 
-Hermes Labyrinth is currently a hackathon build. The demo is polished, and the
+Hermes Damocles is currently a hackathon build. The demo is polished, and the
 repo now has a source/build/check path, but it still needs deeper tests and a
 more modular frontend source tree.
 
@@ -15,7 +15,7 @@ more modular frontend source tree.
 
 - The plugin API is read-only.
 - Redaction delegates to Hermes core. If Hermes core redaction is unavailable,
-  Labyrinth fails closed by replacing trace text with `[redaction unavailable]`.
+  Damocles fails closed by replacing trace text with `[redaction unavailable]`.
   Pattern coverage still depends on Hermes core redaction, so operators should
   run a dummy-secret smoke test before production use.
 - Crossings are inferred from existing Hermes session messages. Some durations,
@@ -35,5 +35,5 @@ more modular frontend source tree.
 - Browser smoke tests cover the demo's main controls and routes, and API helper
   fixtures cover normalization logic. Full Hermes dashboard integration tests
   are not in place yet.
-- `Hermes Labyrinth _standalone_.html` is kept as the design/demo artifact and
+- `Hermes Damocles _standalone_.html` is kept as the design/demo artifact and
   should not be treated as maintainable source.

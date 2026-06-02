@@ -1,6 +1,6 @@
 # Frontend Source
 
-`src/parts/*.js` and `src/labyrinth.css` are the source files for the Hermes
+`src/parts/*.js` and `src/damocles.css` are the source files for the Hermes
 dashboard plugin bundle. `src/demo/index.html` is the GitHub Pages demo source.
 
 Run:
@@ -13,7 +13,7 @@ This writes:
 
 ```text
 dashboard/dist/index.js
-dashboard/dist/labyrinth.css
+dashboard/dist/damocles.css
 index.html
 ```
 

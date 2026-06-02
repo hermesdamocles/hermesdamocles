@@ -1,8 +1,8 @@
-# Hermes Labyrinth Design Brief
+# Hermes Damocles Design Brief
 
 ## Purpose
 
-Hermes Labyrinth is a dashboard extension about orientation.
+Hermes Damocles is a dashboard extension about orientation.
 
 Hermes is the figure who crosses boundaries without obstruction: Olympus,
 earth, underworld, roads, markets, messages, theft, invention, and the passage

@@ -1,26 +1,26 @@
-# Hermes Labyrinth
+# Hermes Damocles
 
-[![Live demo](https://img.shields.io/badge/demo-live-f0ede4?style=flat-square)](https://stainlu.github.io/hermes-labyrinth/)
-[![Version](https://img.shields.io/github/v/tag/stainlu/hermes-labyrinth?style=flat-square)](https://github.com/stainlu/hermes-labyrinth/releases)
+[![Live demo](https://img.shields.io/badge/demo-live-f0ede4?style=flat-square)](https://hermesdamocles.github.io/hermes-damocles/)
+[![Version](https://img.shields.io/github/v/tag/hermesdamocles/hermes-damocles?style=flat-square)](https://github.com/hermesdamocles/hermes-damocles/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
 [![Smoke tested](https://img.shields.io/badge/smoke-tested-3a6a3a?style=flat-square)](#verification)
 [![Hermes Agent](https://img.shields.io/badge/Hermes-Agent-14130f?style=flat-square)](https://github.com/NousResearch/hermes-agent)
 
 Read-only observability for [Hermes Agent](https://github.com/NousResearch/hermes-agent).
 
-Hermes Labyrinth turns autonomous work into a map of crossings: prompts, tool
+Hermes Damocles turns autonomous work into a map of crossings: prompts, tool
 calls, tool results, failures, model switches, subagents, approvals, memory
 hits, redactions, context compression, cron runs, and exportable evidence.
 
 It is not a chat UI. It is a black-box recorder for agents moving through
 unknown work.
 
-![Hermes Labyrinth dashboard screenshot](./screenshot.png)
+![Hermes Damocles dashboard screenshot](./screenshot.png)
 
 ## Demo
 
-- Live demo: https://stainlu.github.io/hermes-labyrinth/
-- Current release: [`v0.1.3`](https://github.com/stainlu/hermes-labyrinth/releases/tag/v0.1.3)
+- Live demo: https://hermesdamocles.github.io/hermes-damocles/
+- Current release: [`v0.1.3`](https://github.com/hermesdamocles/hermes-damocles/releases/tag/v0.1.3)
 - Hermes Agent: https://github.com/NousResearch/hermes-agent
 
 The public demo is static and uses mocked Hermes state so it can run on GitHub
@@ -30,7 +30,7 @@ dashboard plugin routes.
 ## Highlights
 
 - **Journey index**: recent CLI, dashboard, gateway, cron, and delegated work.
-- **Labyrinth map**: ordered crossings through a selected agent journey.
+- **Damocles map**: ordered crossings through a selected agent journey.
 - **Inspector**: input, output, duration, status, evidence, and guideposts for
   a selected crossing.
 - **Guideposts**: generated observations backed by local evidence.
@@ -46,7 +46,7 @@ Install into the Hermes user plugin directory:
 
 ```bash
 mkdir -p ~/.hermes/plugins
-git clone https://github.com/stainlu/hermes-labyrinth.git ~/.hermes/plugins/hermes-labyrinth
+git clone https://github.com/hermesdamocles/hermes-damocles.git ~/.hermes/plugins/hermes-damocles
 ```
 
 Start the dashboard after installing:
@@ -58,7 +58,7 @@ hermes dashboard
 If the dashboard was already running, fully stop and restart it after a first
 install or after updating `dashboard/plugin_api.py`. The frontend plugin list
 can be rescanned, but Python API routes are mounted during dashboard startup.
-If the Labyrinth tab shows a backend/API diagnostic, restart the dashboard and
+If the Damocles tab shows a backend/API diagnostic, restart the dashboard and
 check the dashboard startup logs for plugin API import errors.
 
 Rescan is only for refreshing discovered frontend manifests/assets in the
@@ -68,18 +68,18 @@ current dashboard process:
 curl http://127.0.0.1:9119/api/dashboard/plugins/rescan
 ```
 
-Open the dashboard and select the `Labyrinth` tab.
+Open the dashboard and select the `Damocles` tab.
 
 Optional theme scaffold:
 
 ```bash
 mkdir -p ~/.hermes/dashboard-themes
-cp ~/.hermes/plugins/hermes-labyrinth/theme/hermes-labyrinth.yaml ~/.hermes/dashboard-themes/
+cp ~/.hermes/plugins/hermes-damocles/theme/hermes-damocles.yaml ~/.hermes/dashboard-themes/
 ```
 
 ## Safe Docker PoC
 
-For Docker-based Hermes installs, test Labyrinth against a dedicated Hermes
+For Docker-based Hermes installs, test Damocles against a dedicated Hermes
 home first. Do not mount a production profile with live provider, OAuth,
 webhook, Discord, Telegram, or deployment tokens until the redaction smoke test
 below passes.
@@ -88,8 +88,8 @@ Pin a known commit instead of tracking `main` blindly:
 
 ```bash
 mkdir -p ~/.hermes/plugins
-git clone https://github.com/stainlu/hermes-labyrinth.git ~/.hermes/plugins/hermes-labyrinth
-cd ~/.hermes/plugins/hermes-labyrinth
+git clone https://github.com/hermesdamocles/hermes-damocles.git ~/.hermes/plugins/hermes-damocles
+cd ~/.hermes/plugins/hermes-damocles
 git checkout <reviewed-tag-or-commit>
 ```
 
@@ -101,7 +101,7 @@ Before production use:
 
 - create a test journey containing dummy API keys, webhook secrets, OAuth
   tokens, and tool outputs
-- inspect the Labyrinth UI
+- inspect the Damocles UI
 - inspect `/reports/<journey_id>.json`
 - inspect `/reports/<journey_id>.md`
 - confirm dummy secrets are absent from every surface
@@ -109,8 +109,8 @@ Before production use:
 Rollback is just plugin disable/remove plus a dashboard restart or rescan:
 
 ```bash
-hermes plugins disable hermes-labyrinth
-rm -rf ~/.hermes/plugins/hermes-labyrinth
+hermes plugins disable hermes-damocles
+rm -rf ~/.hermes/plugins/hermes-damocles
 curl http://127.0.0.1:9119/api/dashboard/plugins/rescan
 ```
 
@@ -119,11 +119,11 @@ rescan alone cannot unmount or remount FastAPI routes in the current process.
 
 ## Data Policy
 
-Hermes Labyrinth is read-only by design.
+Hermes Damocles is read-only by design.
 
 - It does not start, stop, resume, mutate, or create Hermes sessions.
 - Secret redaction is applied to journey summaries, previews, and reports.
-- If the Hermes core redactor cannot be loaded or throws, Labyrinth fails
+- If the Hermes core redactor cannot be loaded or throws, Damocles fails
   closed and shows `[redaction unavailable]` instead of raw trace text.
 - Unknown fields stay unknown.
 - Reports are generated from local Hermes state.
@@ -159,7 +159,7 @@ npm run check
 npm run smoke
 ```
 
-`dashboard/dist/` is generated from `src/parts/*.js` and `src/labyrinth.css`.
+`dashboard/dist/` is generated from `src/parts/*.js` and `src/damocles.css`.
 `index.html` is generated from `src/demo/index.html` with content-hash query
 strings on the local JS/CSS assets. These files are checked in because Hermes
 dashboard plugins and GitHub Pages are loaded directly from built static files.
@@ -184,9 +184,9 @@ dashboard plugins and GitHub Pages are loaded directly from built static files.
 ├── src/
 │   ├── demo/                # GitHub Pages demo source
 │   ├── parts/               # Ordered frontend source chunks
-│   └── labyrinth.css        # Frontend CSS source
+│   └── damocles.css         # Frontend CSS source
 ├── theme/
-│   └── hermes-labyrinth.yaml
+│   └── hermes-damocles.yaml
 ├── index.html               # Generated GitHub Pages demo
 ├── screenshot.png           # README screenshot
 └── package.json             # Build/check/smoke scripts
@@ -202,27 +202,27 @@ Hermes local state
         ↓
 dashboard/plugin_api.py
         ↓
-/api/plugins/hermes-labyrinth/*
+/api/plugins/hermes-damocles/*
         ↓
-src/parts/*.js + src/labyrinth.css
+src/parts/*.js + src/damocles.css
         ↓ npm run build
 dashboard/dist/*
         ↓
-Hermes dashboard tab: Labyrinth
+Hermes dashboard tab: Damocles
 ```
 
 ## API Surface
 
 ```text
-GET /api/plugins/hermes-labyrinth/health
-GET /api/plugins/hermes-labyrinth/journeys
-GET /api/plugins/hermes-labyrinth/journeys/{journey_id}
-GET /api/plugins/hermes-labyrinth/journeys/{journey_id}/crossings
-GET /api/plugins/hermes-labyrinth/skills
-GET /api/plugins/hermes-labyrinth/cron
-GET /api/plugins/hermes-labyrinth/guideposts
-GET /api/plugins/hermes-labyrinth/reports/{journey_id}.json
-GET /api/plugins/hermes-labyrinth/reports/{journey_id}.md
+GET /api/plugins/hermes-damocles/health
+GET /api/plugins/hermes-damocles/journeys
+GET /api/plugins/hermes-damocles/journeys/{journey_id}
+GET /api/plugins/hermes-damocles/journeys/{journey_id}/crossings
+GET /api/plugins/hermes-damocles/skills
+GET /api/plugins/hermes-damocles/cron
+GET /api/plugins/hermes-damocles/guideposts
+GET /api/plugins/hermes-damocles/reports/{journey_id}.json
+GET /api/plugins/hermes-damocles/reports/{journey_id}.md
 ```
 
 `/skills` returns effective `skills`, expected `shadowed` overrides, true

@@ -1,10 +1,10 @@
-# Hermes Labyrinth Functional Spec
+# Hermes Damocles Functional Spec
 
 ## Product thesis
 
 Hermes Agent already has the ingredients of a persistent autonomous system:
 sessions, tools, memory, skills, cron, providers, gateway platforms, approvals,
-and delegation. Hermes Labyrinth makes those ingredients visible as journeys
+and delegation. Hermes Damocles makes those ingredients visible as journeys
 through boundaries.
 
 The user should be able to answer:
@@ -140,7 +140,7 @@ MVP:
 - Read session summaries from existing Hermes session storage or dashboard APIs.
 - Show unknown fields as unknown instead of fabricating them.
 
-### 2. Labyrinth Map
+### 2. Damocles Map
 
 Provide a navigable representation of crossings inside a selected journey.
 
@@ -280,7 +280,7 @@ MVP:
 
 - Approval, redaction, and error events from logs/session data.
 
-### 10. Labyrinth Report
+### 10. Damocles Report
 
 Create a shareable artifact for hackathon submission and debugging.
 
@@ -315,14 +315,14 @@ The hackathon implementation should be a drop-in dashboard plugin plus theme.
 
 UI plugin:
 
-- Registers a visible `Labyrinth` tab.
+- Registers a visible `Damocles` tab.
 - Optionally registers a compact status slot in `sidebar` or `header-right`.
 - Calls backend routes through the plugin SDK.
 - Works without patching the dashboard source.
 
 Backend plugin:
 
-- Exposes read-only FastAPI routes under `/api/plugins/hermes-labyrinth/`.
+- Exposes read-only FastAPI routes under `/api/plugins/hermes-damocles/`.
 - Normalizes sessions, skills, logs, cron jobs, and guideposts.
 - Handles missing permissions/data sources gracefully.
 - Redacts secrets before returning previews.
@@ -336,15 +336,15 @@ Theme:
 ## Proposed backend API
 
 ```text
-GET /api/plugins/hermes-labyrinth/health
-GET /api/plugins/hermes-labyrinth/journeys
-GET /api/plugins/hermes-labyrinth/journeys/{journey_id}
-GET /api/plugins/hermes-labyrinth/journeys/{journey_id}/crossings
-GET /api/plugins/hermes-labyrinth/skills
-GET /api/plugins/hermes-labyrinth/cron
-GET /api/plugins/hermes-labyrinth/guideposts
-GET /api/plugins/hermes-labyrinth/reports/{journey_id}.json
-GET /api/plugins/hermes-labyrinth/reports/{journey_id}.md
+GET /api/plugins/hermes-damocles/health
+GET /api/plugins/hermes-damocles/journeys
+GET /api/plugins/hermes-damocles/journeys/{journey_id}
+GET /api/plugins/hermes-damocles/journeys/{journey_id}/crossings
+GET /api/plugins/hermes-damocles/skills
+GET /api/plugins/hermes-damocles/cron
+GET /api/plugins/hermes-damocles/guideposts
+GET /api/plugins/hermes-damocles/reports/{journey_id}.json
+GET /api/plugins/hermes-damocles/reports/{journey_id}.md
 ```
 
 ## Guidepost rules for MVP

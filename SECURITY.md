@@ -1,6 +1,6 @@
 # Security
 
-Hermes Labyrinth is a read-only observability plugin. It should not mutate
+Hermes Damocles is a read-only observability plugin. It should not mutate
 Hermes sessions, local state, tools, credentials, or configuration.
 
 ## Supported Versions
@@ -26,7 +26,7 @@ Include:
 - Secret redaction is applied before journey summaries, previews, and reports
   are displayed.
 - Redaction delegates to Hermes core redaction. If that redactor cannot be
-  loaded or raises an error, Labyrinth fails closed and returns
+  loaded or raises an error, Damocles fails closed and returns
   `[redaction unavailable]` instead of raw trace text.
 - Reports are generated from local Hermes state.
 - The public demo uses mocked data only.
@@ -36,7 +36,7 @@ Include:
 
 - Keep dashboards on localhost or a private network unless protected by your
   normal internal access controls.
-- For Docker installs, mount Labyrinth into a dedicated Hermes profile first.
+- For Docker installs, mount Damocles into a dedicated Hermes profile first.
 - Pin a tag or commit for production; do not track `main` directly.
 - Run a local redaction smoke test with dummy provider keys, webhook secrets,
   OAuth tokens, and tool outputs before enabling the plugin on real traces.

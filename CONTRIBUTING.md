@@ -1,6 +1,6 @@
 # Contributing
 
-Hermes Labyrinth is a small read-only dashboard plugin for Hermes Agent.
+Hermes Damocles is a small read-only dashboard plugin for Hermes Agent.
 Contributions should preserve that boundary.
 
 ## Local Checks

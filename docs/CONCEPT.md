@@ -1,6 +1,6 @@
-# Hermes Labyrinth
+# Hermes Damocles
 
-Hermes Labyrinth is a combined dashboard plugin and theme concept for the
+Hermes Damocles is a combined dashboard plugin and theme concept for the
 Hermes Agent hackathon.
 
 The project treats Hermes Agent as a guide across boundaries: user intent into
@@ -14,7 +14,7 @@ to interpret.
 
 ## Core pitch
 
-Hermes Labyrinth turns the dashboard into a live map of an agent becoming
+Hermes Damocles turns the dashboard into a live map of an agent becoming
 itself. Sessions, tool calls, skills, memory, cron jobs, provider routes,
 approvals, failures, and delegated agents become a traversable record of the
 journey.
@@ -44,14 +44,14 @@ It is a microscope for the self-improving loop, not a decorative skin.
 For the hackathon, ship a drop-in dashboard extension:
 
 ```text
-plugins/hermes-labyrinth/
+plugins/hermes-damocles/
   README.md
   dashboard/
     manifest.json
     plugin_api.py
     dist/index.js
   theme/
-    hermes-labyrinth.yaml
+    hermes-damocles.yaml
 ```
 
 The plugin should work read-only by default. It should use real Hermes state
@@ -59,7 +59,7 @@ where possible and degrade gracefully when a data source is unavailable.
 
 An initial implementation scaffold now lives at:
 
-- `plugins/hermes-labyrinth/dashboard/manifest.json`
-- `plugins/hermes-labyrinth/dashboard/plugin_api.py`
-- `plugins/hermes-labyrinth/dashboard/dist/index.js`
-- `plugins/hermes-labyrinth/theme/hermes-labyrinth.yaml`
+- `plugins/hermes-damocles/dashboard/manifest.json`
+- `plugins/hermes-damocles/dashboard/plugin_api.py`
+- `plugins/hermes-damocles/dashboard/dist/index.js`
+- `plugins/hermes-damocles/theme/hermes-damocles.yaml`
