@@ -1,6 +1,5 @@
 # Hermes Damocles
 
-[![Live demo](https://img.shields.io/badge/demo-live-f0ede4?style=flat-square)](https://hermesdamocles.github.io/hermes-damocles/)
 [![Version](https://img.shields.io/github/v/tag/hermesdamocles/hermes-damocles?style=flat-square)](https://github.com/hermesdamocles/hermes-damocles/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
 [![Smoke tested](https://img.shields.io/badge/smoke-tested-3a6a3a?style=flat-square)](#verification)
