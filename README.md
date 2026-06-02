@@ -18,7 +18,6 @@ unknown work.
 
 ## Demo
 
-- Live demo: https://hermesdamocles.github.io/hermes-damocles/
 - Current release: [`v0.1.3`](https://github.com/hermesdamocles/hermes-damocles/releases/tag/v0.1.3)
 - Hermes Agent: https://github.com/NousResearch/hermes-agent
 
