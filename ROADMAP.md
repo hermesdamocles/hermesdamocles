@@ -1,0 +1,28 @@
+# Roadmap
+
+## Now
+
+- Keep the public demo stable.
+- Keep every visible action either working or clearly read-only.
+- Keep `dashboard/dist` reproducible from `src`.
+- Keep the canonical GitHub Pages URL clean while cache-busting local assets.
+- Keep browser smoke tests and API fixture tests passing.
+- Maintain `v0.1.x` as the installable hackathon preview line.
+
+## Next
+
+- Convert `src/parts/*.js` into true ES modules with focused exports/imports.
+- Add backend tests for state-db absence, journey listing, crossing inference,
+  redaction, guideposts, and report generation.
+- Add full Hermes dashboard integration tests for plugin mounting and real local
+  state.
+
+## Later
+
+- Lazy-load crossings for only the selected journey.
+- Add live streaming/replay of active crossings.
+- Build richer model-ferry views for provider/model transitions.
+- Add a subagent tree with parent/child journey navigation.
+- Add optional hook recording for precise tool durations and boundary events.
+- Cut `v0.2.0` once source modules and Hermes dashboard integration tests are
+  in place.
